@@ -58,7 +58,7 @@
 <a href="#prizes" class="nav-link">Prizes</a>
 <a href="#categories" class="nav-link">Categories</a>
 <a href="#steps" class="nav-link">Steps</a>
-<a href="#faqs" class="nav-link">FAQs</a>
+<a href="#rulesnfaqs" class="nav-link">Rules & FAQs</a>
 <a href="#about" class="nav-link">About</a>
 <a href="#dashboard" class="nav-link">Dashboard</a>
 <a href="#articles" class="nav-link">Articles</a>
@@ -487,13 +487,148 @@
 </div>
 </div>
 </section>
-<section class="products" id="faqs">
+<section class="products" id="rulesnfaqs">
 <div class="w-layout-blockcontainer container w-container">
+
+<style>
+.rules-box{
+    max-width:900px;
+    margin:40px auto;
+    padding:30px;
+    border:1px solid #dcdcdc;
+    border-radius:20px;
+    background:#fff;
+    text-align:left;
+    box-sizing:border-box;
+}
+
+.rules-box p{
+    margin-bottom:15px;
+    line-height:1.7;
+}
+
+.rules-box ul{
+    padding-left:25px;
+    margin-bottom:20px;
+}
+
+.rules-box li{
+    margin-bottom:8px;
+    line-height:1.6;
+}
+
+.rules-toggle{
+    cursor:pointer;
+    font-weight:600;
+    display:inline-block;
+    margin-top:10px;
+}
+</style>
+
+<div class="rules-box">
 <div class="section-title">
-<h2 class="title">FAQs</h2>
+<h2 class="title">Rules & FAQs</h2>
 </div>
 
-<div class="faq-section">
+    <p><b>1.</b> All submitted artworks must be <b>100% original and created by the participant only</b>. Copied, traced, AI-generated, digitally manipulated, or plagiarized artworks will be immediately disqualified.</p>
+
+    <p><b>2.</b> After completing the online registration process, <b>couriering the original physical artwork is mandatory for every participant</b>. Entries without physical artwork submission will not be considered valid.</p>
+
+    <p><b>3.</b> Participants must carefully pack and courier their artwork to the official address provided by the organization within the submission deadline.</p>
+
+    <div id="moreRules" style="display:none;">
+
+        <p><b>4.</b> The participant will be fully responsible for:</p>
+        <ul>
+            <li>Courier charges</li>
+            <li>Packaging safety</li>
+            <li>Transit risks</li>
+            <li>Customs charges (if applicable)</li>
+        </ul>
+
+        <p><b>5.</b> Damaged, folded, torn, or poorly packed artworks received during transit may be rejected by the organizing team.</p>
+
+        <p><b>6.</b> Only <b>handmade traditional artworks</b> are allowed. Digital art, AI-generated art, printed artworks, photocopies, or reproduced works are strictly prohibited unless specifically mentioned in a category.</p>
+
+        <p><b>7.</b> Minimum artwork sheet size must be <b>A4 (8.3 × 11.7 inches)</b> and maximum artwork size should not exceed <b>A2 size</b>.</p>
+
+        <p><b>8.</b> Accepted mediums include:</p>
+        <ul>
+            <li>Pencil</li>
+            <li>Charcoal</li>
+            <li>Watercolor</li>
+            <li>Acrylic</li>
+            <li>Oil Pastel</li>
+            <li>Soft Pastel</li>
+            <li>Ink</li>
+            <li>Mixed Media</li>
+        </ul>
+
+        <p><b>9.</b> Participants must upload a <b>clear high-quality image</b> of the artwork during online registration for record and judging purposes.</p>
+
+        <p><b>10.</b> The uploaded artwork image must not contain:</p>
+        <ul>
+            <li>Watermarks</li>
+            <li>Heavy editing</li>
+            <li>Mockups</li>
+            <li>Decorative frames</li>
+            <li>Filters</li>
+            <li>Text overlays</li>
+        </ul>
+
+        <p><b>11.</b> The artwork must not contain:</p>
+        <ul>
+            <li>Hate speech</li>
+            <li>Offensive content</li>
+            <li>Explicit nudity</li>
+            <li>Religious disrespect</li>
+            <li>Political propaganda</li>
+            <li>Copyright violations</li>
+        </ul>
+
+        <p><b>12.</b> The organizing team may request:</p>
+        <ul>
+            <li>Work-in-progress photos</li>
+            <li>Sketch drafts</li>
+            <li>Raw images</li>
+            <li>Proof of originality</li>
+        </ul>
+
+        <p>at any stage of the competition.</p>
+
+        <p><b>13.</b> Any copied or copyright-violating artwork will result in immediate disqualification without refund.</p>
+
+        <p><b>14.</b> Participants retain copyright ownership of their artwork; however, the organizer may use submitted images for:</p>
+        <ul>
+            <li>Website display</li>
+            <li>Social media promotions</li>
+            <li>Exhibition promotions</li>
+            <li>Marketing materials</li>
+        </ul>
+
+        <p>with proper artist credit.</p>
+
+        <p><b>15.</b> Entry fees are non-refundable once registration is completed.</p>
+
+        <p><b>16.</b> The decision of the jury panel will be final and binding for all participants.</p>
+
+        <p><b>17.</b> Incomplete registrations, incorrect information, or failure to courier the artwork before the deadline may lead to rejection of the entry.</p>
+
+        <p><b>18.</b> The organizer reserves the right to update, modify, or cancel any rule whenever necessary.</p>
+
+        <p><b>19.</b> By participating in the competition, every participant automatically agrees to all competition rules and guidelines.</p>
+
+    </div>
+
+    <span class="rules-toggle" id="showMoreBtn">
+        Show More
+    </span>
+
+    <span class="rules-toggle" id="showLessBtn" style="display:none;">
+        Show Less
+    </span>
+  <hr>
+    <div class="faq-section">
 
   <div class="faq-item">
     <div class="faq-question">
@@ -644,10 +779,28 @@ faqItems.forEach(item => {
 });
 </script>
 
+
+</div>
+
+<script>
+const moreRules = document.getElementById("moreRules");
+const showMoreBtn = document.getElementById("showMoreBtn");
+const showLessBtn = document.getElementById("showLessBtn");
+
+showMoreBtn.onclick = function () {
+    moreRules.style.display = "block";
+    showMoreBtn.style.display = "none";
+    showLessBtn.style.display = "inline-block";
+};
+
+showLessBtn.onclick = function () {
+    moreRules.style.display = "none";
+    showMoreBtn.style.display = "inline-block";
+    showLessBtn.style.display = "none";
+};
+</script>
 </div>
 </section>
-
-
 
 <!--
 <section class="about-us">
